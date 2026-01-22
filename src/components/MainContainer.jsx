@@ -16,15 +16,25 @@ const MainContainer = () => {
   // variabile che mi identifica numero id da assegnare ai nuovi elementi(parto dalla lunghezza dell'array ricevuto e incremento di uno così da avere id diverso già al primo submit)
   const [numId, setNumId] = useState(titleFilms.length + 1);
 
+  //variabile per attivare form
+  const [activeForm, setActiveForm] = useState(false);
+
   //-----------------------------COMPOSIZIONE COMPONENTE -------------------------------------------------//
   return (
     <main>
-      <h2>Film</h2>
       <GeneratorList titleFilms={titleFilms} removeFilm={removeFilm} />
+      <button
+        id="open-form"
+        onClick={OpenNow}
+        className={activeForm ? "back-yellow" : ""}
+      >
+        {activeForm ? <p>Chiudi form</p> : <p>Add new film</p>}
+      </button>
       <FormAdd
         addFilm={addFilm}
         newTitleFilm={newTitleFilm}
         setNewTitleFilm={setNewTitleFilm}
+        activeForm={activeForm}
       />
     </main>
   );
@@ -48,6 +58,15 @@ const MainContainer = () => {
     const filmRimanenti = titleFilms.filter((film) => film.id !== currentId); //con filter vado a creare array con tutti gli elementi che hanno id diverso dall'elemento riferito all'elemento cliccato
     setTitleFilms(filmRimanenti);
   }
+  //funzione per aprire form
+  function OpenNow() {
+    if (activeForm === false) {
+      setActiveForm(true);
+    } else {
+      setActiveForm(false);
+    }
+  }
+
   //--------------------------------FINE SEZIONE FUNZIONI ------------------------------------------------//
 };
 export default MainContainer;

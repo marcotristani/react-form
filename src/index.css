@@ -6,16 +6,73 @@
 header {
   padding: 30px;
   text-align: center;
-  background-color: burlywood;
+  background-color: skyblue;
 }
 main {
-  padding: 30px;
+  padding: 50px;
+  position: relative;
+  background-color: green;
+  min-height: 100vh;
+}
+ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
 }
 li {
-  list-style-type: disc;
+  list-style-type: none;
+  font-size: 1.5rem;
+  font-weight: bold;
+  border: 2px solid blue;
+  padding: 20px;
+  width: calc((100% / 3) - (40px / 3));
+  position: relative;
+  background-color: whitesmoke;
 }
 .delete-btn {
   border: none;
   background-color: transparent;
   padding: 0;
+  position: absolute;
+  right: 5px;
+  top: 5px;
+}
+
+form {
+  padding: 30px;
+  margin: 30px;
+  border: 3px solid orange;
+  border-radius: 20px;
+  position: relative;
+  background-color: white;
+}
+form h2 {
+  text-align: center;
+  padding: 20px;
+}
+form label {
+  margin-right: 10px;
+}
+
+form button {
+  border: 0;
+  font-size: 2rem;
+  background-color: transparent;
+  position: absolute;
+  left: 10px;
+  top: 10px;
+}
+.d-none {
+  display: none;
+}
+#open-form {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  border-radius: 10px;
+  border: 2p solid black;
+  padding: 3px;
+}
+.back-yellow {
+  background-color: yellow;
 }

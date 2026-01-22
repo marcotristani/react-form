@@ -15,7 +15,7 @@ const GeneratorList = (props) => {
           {film.title}
           {/* bottone con icona di fontawesome che mi va a cancellare l'elemento dall'array */}
           <button className="delete-btn" onClick={() => removeFilm(film.id)}>
-            <FontAwesomeIcon icon="fa-solid fa-trash" fade />
+            <FontAwesomeIcon icon="fa-solid fa-trash" />
           </button>
         </li>
       ))}
