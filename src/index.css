@@ -14,10 +14,6 @@ main {
 li {
   list-style-type: disc;
 }
-.delete-btn img {
-  max-width: 15px;
-  max-height: 15px;
-}
 .delete-btn {
   border: none;
   background-color: transparent;
