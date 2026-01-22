@@ -1,4 +1,4 @@
-import ListFilms from "./components/ListFilms";
+import MainContainer from "./components/MainContainer";
 
 function App() {
   return (
@@ -6,9 +6,7 @@ function App() {
       <header>
         <h1>Checco Zalone</h1>
       </header>
-      <main>
-        <ListFilms />
-      </main>
+      <MainContainer />
     </>
   );
 }

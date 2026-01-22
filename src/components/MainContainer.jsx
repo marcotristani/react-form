@@ -6,8 +6,9 @@ import { useState } from "react";
 
 //importo componenti da utilizzare
 import GeneratorList from "./GeneratorList";
+import FormAdd from "./FormAdd";
 
-const ListFilms = () => {
+const MainContainer = () => {
   //-------------------------DICHIARAZIONE VARIABILI DI STATO-----------------------------------------------------------------//
   //Variabili stringa film e variabile dove salvare nuovo valore del film
   const [titleFilms, setTitleFilms] = useState(filmsCheccoZalone);
@@ -17,21 +18,15 @@ const ListFilms = () => {
 
   //-----------------------------COMPOSIZIONE COMPONENTE -------------------------------------------------//
   return (
-    <>
+    <main>
       <h2>Film</h2>
       <GeneratorList titleFilms={titleFilms} removeFilm={removeFilm} />
-      {/* creo form con submito che mi va ad aggiungere elemnto alla lista */}
-      <form onSubmit={addFilm}>
-        <input
-          type="text"
-          placeholder="Inserisci un nuovo titolo"
-          value={newTitleFilm}
-          // imposto onChange per poter prendere in input valore inserito dall'utente
-          onChange={(e) => setNewTitleFilm(e.target.value)}
-        ></input>
-        <button>Add</button>
-      </form>
-    </>
+      <FormAdd
+        addFilm={addFilm}
+        newTitleFilm={newTitleFilm}
+        setNewTitleFilm={setNewTitleFilm}
+      />
+    </main>
   );
 
   //-------------------------------------------SEZIONE FUNZIONI-----------------------------------------------------------------------//
@@ -55,4 +50,4 @@ const ListFilms = () => {
   }
   //--------------------------------FINE SEZIONE FUNZIONI ------------------------------------------------//
 };
-export default ListFilms;
+export default MainContainer;
