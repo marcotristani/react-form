@@ -3,3 +3,14 @@
   padding: 0;
   box-sizing: border-box;
 }
+header {
+  padding: 30px;
+  text-align: center;
+  background-color: burlywood;
+}
+main {
+  padding: 30px;
+}
+li {
+  list-style-type: disc;
+}
